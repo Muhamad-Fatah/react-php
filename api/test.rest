@@ -1,0 +1,108 @@
+@url = http://192.168.1.2/api/
+
+
+############# USERS #############
+
+# GET ALL USERS
+GET {{url}}/users
+
+###
+
+# GET DETAIL USER
+GET {{url}}users?user_id=1
+
+###
+
+# GET SEARCH USER
+GET {{url}}/users?search=fatah
+
+###
+
+# CREATE USER
+POST {{url}}/create.php
+content-type: application/x-www-form-urlencoded
+
+username=fatah&email=fatah&password=fatah
+
+###
+
+# EDIT USER
+PUT {{url}}/update.php?user_id=76
+content-type: application/x-www-form-urlencoded
+
+username=upda gk&email=hai
+
+###
+
+# DELETE USER
+DELETE {{url}}/delete.php?user_id=86
+
+###
+
+############# ATTENDANCES #############
+
+
+# LOGIN
+POST {{url}}attendances/login.php
+content-type: application/json
+
+{
+    "username" : "Milo",
+    "password" : "milo"
+}
+
+###
+
+
+############# BARANG #############
+
+# GET ALL BARANG
+GET {{url}}/barang
+
+###
+
+# GET DETAIL BARANG
+GET {{url}}/barang?barang_id=5
+
+###
+
+# GET SEARCH BARANG
+GET {{url}}/barang?search=helm
+
+###
+
+# CREATE BARANG
+POST {{url}}/barang/create.php
+content-type : application/x-www-form-urlencoded
+
+user_id=1&nama_barang=Mazda Rx8&deskripsi=Mazda rx8 bismillah semoga rezeki&foto_barang=https://blog-media.lifepal.co.id/app/uploads/sites/3/2022/01/17161312/harga-mobil-mazda-rx-8.jpg&stok=1
+
+
+############# REVIEWS #############
+
+
+# GET REVIEW
+GET {{url}}reviews?user_id=5
+
+###
+
+# CREATE REVIEW
+POST {{url}}reviews/create.php
+content-type: application/x-www-form-urlencoded
+
+barang_id=6&user_id=1&rate=5&comment=Lumayan ok barangnya
+
+
+############# CHAT #############
+
+
+# GET CHAT
+GET {{url}}/chat?from_id=6&to_id=4
+
+###
+
+# CREATE CHAT
+POST {{url}}/chat/create.php?from_id=6&to_id=4
+content-type : application/x-www-form-urlencoded
+
+message=Baikk banget,kamu?
